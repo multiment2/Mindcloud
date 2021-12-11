@@ -1,0 +1,19 @@
+$(document).ready(function(){
+       $.ajax({
+          url: 'http://localhost:8080', 
+          data: JSON.stringify ({jsonrpc:'2.0',method:'add', params:[1400,2100],id:"jsonrpc"} ),  // id is needed !!
+          type:"POST",
+          dataType:"json",
+          success: function (result) { 
+                 alert("ok");
+          },
+          error: function (err,status,thrown) {
+                 alert ("this syntax sucks!! " + " ERROR: " + err + " STATUS: " + status + " " + thrown );
+          },
+          complete: function (xhr,status) { 
+                 alert('Complete=>  showing status as: '+ status); 
+                 data = $.parseJSON(xhr.responseText);  
+                 alert (data);
+          } 
+       });
+    });

@@ -1,0 +1,12 @@
+/ POST
+
+$.ajax({
+    type: "POST",
+    url: "http://127.0.0.1:8000/ajax/AJAXviewsPOST/",
+    dataType: "json",
+    data: { "item": "one" },
+    success: function(data) {
+        alert(data.message);
+        console.log(data);
+    }
+});
