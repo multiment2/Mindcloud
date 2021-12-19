@@ -1,4 +1,4 @@
-#!/home/multiment/programms/Mindcloud/mindcloud/bin/python
+#!/home/multiment/programms/Mindcloud/mindcloud/bin/python3.8
 # -*- coding: utf-8 -*-
 import re
 import sys

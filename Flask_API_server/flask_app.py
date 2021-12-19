@@ -17,7 +17,7 @@ with app.app_context():
 
 @app.route('/')
 def index():
-    return 'Hello boy! Xa-Xa-Xa!!!'
+    return 'Hello boy! Xa-Xa-Xa!!! Хо-хо-хо!!!'
 
 @api.dispatcher.add_method
 def get_one_stick(id):
