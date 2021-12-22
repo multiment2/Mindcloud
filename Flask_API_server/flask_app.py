@@ -1,23 +1,22 @@
-from flask import Flask
+#from flask import Flask
+from app_run import app as api_app
 from jsonrpc.backend.flask import api
 
 
 from Flask_API_server.data_base import db, Sticker, row2dict
 import json
 
-app = Flask(__name__)
 
 
-app.config.from_pyfile("config.py")
-app.add_url_rule('/api', 'api', api.as_view(), methods=['POST'])
 
-db.init_app(app)   #Инициализируем базу данных
-with app.app_context():
+#app.config.from_pyfile("config.py")
+api_app.add_url_rule('/api', 'api', api.as_view(), methods=['POST'])
+
+db.init_app(api_app)   #Инициализируем базу данных
+with api_app.app_context():
     db.create_all()
 
-@app.route('/')
-def index():
-    return 'Hello boy! Xa-Xa-Xa!!! Хо-хо-хо!!!'
+
 
 @api.dispatcher.add_method
 def get_one_stick(id):
