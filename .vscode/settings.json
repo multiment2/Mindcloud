@@ -1,5 +1,0 @@
-{
-    "debug.terminal.clearBeforeReusing": true,
-    "terminal.explorerKind": "external",
-    "python.defaultInterpreterPath": "/usr/bin/python3.10"
-}
