@@ -1,8 +1,8 @@
-from flask import Flask
+from dispetcher_app import app
+import config_app_global
 
-app = Flask(__name__)
 
-
+app.config.from_pyfile('config_app_global.py')
 
 if __name__ == "__main__":
     app.run()
