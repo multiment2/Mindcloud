@@ -3,8 +3,8 @@
 '''
 
 from flask import Flask, redirect, current_app
-from API_rpc.API_rpc import api
-from API_rpc.rpc_api_data_base import db
+from API_rpc.API_rpc import api, db
+#from API_rpc.rpc_api_data_base import db
 from home.index import home
 import config_app_global
 
