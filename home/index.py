@@ -1,6 +1,6 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 
-home=Blueprint('home', __name__)
+home=Blueprint('home', __name__, static_folder='static', template_folder='templates')
 
 @home.route('/')
 def start_page():
@@ -10,3 +10,5 @@ def start_page():
 @home.route('/index')
 def index_page():
     return "I am Index page"
+
+

@@ -24,6 +24,7 @@ with app.app_context():
     db.create_all(bind = 'mindcloud_api')
 
 
-#@app.route('/')
+@app.route('/')
 def index():
     return redirect('/home')
+
