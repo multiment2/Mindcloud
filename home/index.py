@@ -12,3 +12,6 @@ def index_page():
     return "I am Index page"
 
 
+@home.route('/game')
+def start_game():
+    return render_template('Platformer 3D.html')
