@@ -2,13 +2,16 @@
 Здесь подключаем все конечные точки и чертежи.
 '''
 
-from flask import Flask, redirect, current_app
+from flask import Flask, redirect, current_app, render_template
 from API_rpc.API_rpc import api, db #Объект базы данных надо
 # импортировать оттуда, где он ипользуется.
 from home.index import home
 import config_app_global
+from flask_cors import CORS
 
 app=Flask(__name__)
+
+CORS(app)
 
 app.config.from_pyfile('config_app_global.py')
 
@@ -27,4 +30,9 @@ with app.app_context():
 @app.route('/')
 def index():
     return redirect('/home')
+
+
+@app.route('/game')
+def start_game():
+    return render_template('Platformer 3D.html')
 
