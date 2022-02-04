@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Template</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script src='{{url_for("Game_Godot.js")}}'></script>
+        <script>
+        const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"Game_Godot","experimentalVK":false,"fileSizes":{"Game_Godot.pck":4217712,"Game_Godot.wasm":13342674},"focusCanvas":false,"gdnativeLibs":[]};
+            var engine = new Engine(GODOT_CONFIG);
+            engine.startGame();
+        </script>
+    </body>
+</html>
