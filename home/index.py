@@ -12,6 +12,6 @@ def start_page():
 
 @home.route('/game')
 def start_game():
-    return render_template('Game_Godot.html')
+    return render_template('index.html')
 
 
