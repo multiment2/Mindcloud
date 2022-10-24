@@ -1,0 +1,18 @@
+.block-1 {
+    color: red;
+    font-size: 50px;
+}
+
+#header-1 {
+    background-color: rgb(111, 241, 181);
+    color: royalblue;
+    text-align: right;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 48px;
+    }
+
+#header-2{
+    background-color: rgb(05,05,05);
+    color:aliceblue;
+    font-size: 14px;
+}
