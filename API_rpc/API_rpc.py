@@ -5,7 +5,7 @@
 #from flask import Blueprint, current_app
 #import config_app_global
 from jsonrpc.backend.flask import api
-from rpc_api_data_base import db, row2dict, Sticker
+from .rpc_api_data_base import db, row2dict, Sticker
 
 
 #rpc_bp = Blueprint('api', __name__, url_prefix='/api')
