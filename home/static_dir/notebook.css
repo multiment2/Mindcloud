@@ -1,4 +1,11 @@
-div {
+.main-block {
     color:rgb(10, 248, 30);
     font-size: 45px;
+    border: 10px solid greenyellow;
+    padding: 20px;
+}
+
+.button-rule {
+    padding: 10px;
+    float: left;
 }
