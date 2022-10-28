@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 
+{%block notebook_style%}
 <link rel="stylesheet" href="{{url_for('home.static', filename="notebook.css")}}">
+{%endblock%}
 
 {%block buttons%}
 <div class="button-rule">
     <button>Создать</button>
+    <button>Редактировать</button>
     <button>Открыть</button>
     <button>Удалить</button>
     
@@ -18,7 +21,7 @@
 
 
 {%block content2%}
-<link rel="stylesheet" href="{{url_for('home.static', filename="notebook.css")}}">
+<!-- <link rel="stylesheet" href="{{url_for('home.static', filename="notebook.css")}}"> -->
 
 <div class="main-block">Это страница приложения</div>
 
