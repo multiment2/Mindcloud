@@ -1,12 +1,25 @@
 .main-block {
     color:rgb(10, 248, 30);
     font-size: 45px;
-    border: 10px solid greenyellow;
+    margin: 5px;
+    border: 5px solid rgb(86, 200, 235);
     padding: 20px;
+    float:left;
+    max-height: 70%;
 }
 
 .button-rule {
     padding: 10px;
-    float: left;
-    color: blueviolet;
+    background-color: aqua;
+    color: blue;
+    border-radius: 100%;
+    
+}
+
+#view-links {
+    width: 20%;
+}
+
+#view-content {
+    width: 70%;
 }
