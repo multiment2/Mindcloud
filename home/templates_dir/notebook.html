@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
+<script src="{{url_for('home.static', filename='notebook_script.js')}}"></script>
+
+
 {%block notebook_style%}
 <link rel="stylesheet" href="{{url_for('home.static', filename="notebook.css")}}">
-<!-- <script src="{{url_for('home.static', filename='notebook_script.js')}}"> -->
+
 
 {%endblock%}
 
