@@ -2,11 +2,13 @@
 
 {%block notebook_style%}
 <link rel="stylesheet" href="{{url_for('home.static', filename="notebook.css")}}">
+<!-- <script src="{{url_for('home.static', filename='notebook_script.js')}}"> -->
+
 {%endblock%}
 
 {%block buttons%}
 <div class="button-rule">
-    <button onclick="create_new_ctick">Создать</button>
+    <button>Создать</button>
     <button>Редактировать</button>
     <button>Открыть</button>
     <button>Удалить</button>
@@ -24,12 +26,11 @@
 
 
 {%block content2%}
-<!-- <link rel="stylesheet" href="{{url_for('home.static', filename="notebook.css")}}"> -->
 
 <div class="main-block" id="view-content">
-    <form enctype="application/json">
+    <form enctype="application/json" >
         <input name="name" id="name" value="Введите название">
-        <textarea name="body" id="body" value="Какой-то текст">
+        <textarea name="body" id="body" value="Какой-то текст"></textarea>
         <button>Сохранить</button>
     </form>
 </div>
@@ -37,5 +38,5 @@
 {%endblock%}
 
 
-{%block modal-block%}
+{%block modal_block%}
 {%endblock%}

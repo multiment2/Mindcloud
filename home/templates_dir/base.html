@@ -1,7 +1,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="{{url_for('home.static', filename="base.css")}}">
+
+        <link rel="stylesheet" href="{{url_for('home.static', filename='base.css')}}">
+        
         {%block notebook_style%}{%endblock%}
     </head>
     <body>
@@ -30,7 +32,7 @@
     
     </body>
 
-    {%block modal-block%}{%endblock%}
+    {%block modal_block%}{%endblock%}
 
 
 
