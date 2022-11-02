@@ -6,7 +6,7 @@
 
 {%block buttons%}
 <div class="button-rule">
-    <button>Создать</button>
+    <button onclick="create_new_ctick">Создать</button>
     <button>Редактировать</button>
     <button>Открыть</button>
     <button>Удалить</button>
@@ -20,9 +20,22 @@
 {%endblock%}
 
 
+
+
+
 {%block content2%}
 <!-- <link rel="stylesheet" href="{{url_for('home.static', filename="notebook.css")}}"> -->
 
-<div class="main-block" id="view-content">Это страница приложения</div>
+<div class="main-block" id="view-content">
+    <form enctype="application/json">
+        <input name="name" id="name" value="Введите название">
+        <textarea name="body" id="body" value="Какой-то текст">
+        <button>Сохранить</button>
+    </form>
+</div>
 
+{%endblock%}
+
+
+{%block modal-block%}
 {%endblock%}
