@@ -5,8 +5,6 @@ var body-request = JSON.stringify({
     id: id
 })
 
-
-
 var response = fetch('api', {
     method: "POST";
     headers:{
@@ -16,4 +14,6 @@ var response = fetch('api', {
     
 });
 
-
+function save-stick {
+    var sticker = new FormData
+}

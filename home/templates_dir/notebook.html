@@ -11,10 +11,10 @@
 
 {%block buttons%}
 <div class="button-rule">
-    <button>Создать</button>
-    <button>Редактировать</button>
-    <button>Открыть</button>
-    <button>Удалить</button>
+    <button id="create-stick" >Создать</button>
+    <button id="uddate-stick">Редактировать</button>
+    <button id="get-stick">Открыть</button>
+    <button id="delete-stick">Удалить</button>
     
 </div>
 {%endblock%}
@@ -34,7 +34,7 @@
     <form enctype="application/json" >
         <input name="name" id="name" value="Введите название">
         <textarea name="body" id="body" value="Какой-то текст"></textarea>
-        <button>Сохранить</button>
+        <button id = "save-stick" onclick = "save-stick">Сохранить</button>
     </form>
 </div>
 
