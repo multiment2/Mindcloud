@@ -16,31 +16,3 @@ var response = fetch('api', {
     
 });
 
-<<<<<<< HEAD
-function save_stick {
-    var sticker = new FormData
-=======
-
-function save-stick ("create_new_stick", params){
-    var response = fetch('api', {
-        method: "POST";
-        headers:{
-            'Content-Type': 'Application/json';
-        },
-        body: body-request;
-        
-    });
-    return alert (response.json().message)
-}
-
-function get_one_stick() {
-    fetch('api', {
-        method: "POST";
-        headers:{
-            'Content-Type': 'Application/json';
-        },
-        body: body-request;
-        
-    });
->>>>>>> 5246c33 (Update js script)
-}
