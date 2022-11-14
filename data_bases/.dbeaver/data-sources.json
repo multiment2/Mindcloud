@@ -1,0 +1,30 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-18106846bb5-285ba69362b8a943": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "mindcloud_api_database.db",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "/home/multiment/programms/Mindcloud/data_bases/mindcloud_api_database.db",
+				"url": "jdbc:sqlite:/home/multiment/programms/Mindcloud/data_bases/mindcloud_api_database.db",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Разработка",
+			"color": "255,255,255",
+			"description": "База данных для разработки",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}

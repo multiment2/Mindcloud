@@ -1,4 +1,4 @@
-var body-request = JSON.stringify({
+var body_request = JSON.stringify({
     json-rpc: '2.0',
     method: method,
     params: params,
@@ -6,14 +6,14 @@ var body-request = JSON.stringify({
 })
 
 var response = fetch('api', {
-    method: "POST";
+    method: "POST",
     headers:{
         'Content-Type': 'Application/json';
     },
-    body: body-request;
+    body: body_request
     
 });
 
-function save-stick {
+function save_stick {
     var sticker = new FormData
 }
