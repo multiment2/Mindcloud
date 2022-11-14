@@ -1,11 +1,11 @@
-var body_request = JSON.stringify({
+var body_request = {
     "jsonrpc": '2.0',
     "method": method,
     "params": params,
     "id": 10
-})
+}
 
-var params = new FormData(view-content)
+var params = new FormData(view-content);
 
 var response = fetch('api', {
     method: "POST",
