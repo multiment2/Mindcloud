@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-<script src="{{url_for('home.static', filename='notebook_script.js')}}"></script>
+
 
 
 {%block notebook_style%}
@@ -22,6 +22,7 @@
 
 
 {%block content1%}
+<script src="{{url_for('home.static', filename="notebook_script.js")}}" onload="get_all_stick"></script>
 <div class="main-block" id="view-links">Окно ссылок</div>
 {%endblock%}
 
