@@ -28,5 +28,6 @@ var response = fetch('api', {
 
 
 function get_all_stick (response) {
-        console.log(response => response.json())
-}
+    var result = response.text();    
+    console.log (result);
+    }
