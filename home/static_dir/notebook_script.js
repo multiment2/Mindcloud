@@ -15,19 +15,17 @@ var body_request = (method, params, id) => JSON.stringify ({
     "id": id
 })
 */
-
-
-
-var response = fetch('api', {
+let response = fetch('api', {
     method: 'POST',
     headers:{
         'Content-Type': 'Application/json'
     },
-    body: JSON.stringify(body_request)
-});
+    body: JSON.stringify(body_request)})
+    
 
 
-function get_all_stick (response) {
-    var result = response.text();    
-    console.log (result);
-    }
+response.then(result => alert(JSON.stringify(result[0])));
+
+function get_all_stick (result) {    
+    console.log(result.message);
+    };
