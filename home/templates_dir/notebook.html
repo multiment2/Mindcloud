@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
-
-
+{%block js%}
+<script src="{{url_for('home.static', filename="notebook_script.js")}}" onload="get_all_stick()"></script>
+{%endblock%}
 
 {%block notebook_style%}
 <link rel="stylesheet" href="{{url_for('home.static', filename="notebook.css")}}">
@@ -22,7 +23,7 @@
 
 
 {%block content1%}
-<script src="{{url_for('home.static', filename="notebook_script.js")}}" onload = 'get_all_stick'></script>
+
 <div class="main-block" id="view-links">Окно ссылок</div>
 {%endblock%}
 
@@ -36,7 +37,7 @@
     <form enctype="application/json" >
         <input name="name" id="name">
         <textarea name="body" id="body"></textarea>
-        <button id = "save-stick" onclick = "save-stick">Сохранить</button>
+        <button id = "save-stick">Сохранить</button>
     </form>
 </div>
 
