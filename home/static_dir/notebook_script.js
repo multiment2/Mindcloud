@@ -1,10 +1,5 @@
 
-var body_request = {
-    "jsonrpc": '2.0',
-    "method": "get_all_stick",
-    "params": [],
-    "id": 1
-}
+
 
 
 /*
@@ -15,11 +10,14 @@ var body_request = (method, params, id) => JSON.stringify ({
     "id": id
 })
 */
-
-//let response = get_all_stick();
-//console.log(response);
   
-function get_all_stick (body_request) {   
+function get_all_stick () {   
+    var body_request = JSON.stringify ({
+    "jsonrpc": '2.0',
+    "method": "get_all_stick",
+    "params": [],
+    "id": 1
+});
     fetch('api', {
     method: 'POST',
     headers:{
@@ -27,6 +25,13 @@ function get_all_stick (body_request) {
     },
     body: body_request})
     .then(response => response.json())
-    .then(body => console.log(body.result));
+    .then(body => make_links(body.result));
     };
+
+function make_links(result){
+    for (let i in result){
+        alert(result[i]['name']); 
+        }
+    }
+//            
 
