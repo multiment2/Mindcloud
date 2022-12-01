@@ -29,9 +29,19 @@ function get_all_stick () {
     };
 
 function make_links(result){
+
+    let lns = document.createElement('ul');
     for (let i in result){
-        alert(result[i]['name']); 
+        let li = document.createElement('li');
+        let a = document.createElement('а');
+        let text = document.createTextNode(result[i].id + result[i].name + result[i].date);
+        a.appendChild(text);
+        li.appendChild(a);
+        lns.appendChild(li);
+
+        console.log(result[i].id); 
         }
+    document.getElementById('view-links').appendChild(lns);
     }
 //            
 
