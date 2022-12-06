@@ -33,15 +33,16 @@ function make_links(result){
     let lns = document.createElement('ul');
     for (let i in result){
         let li = document.createElement('li');
-        let a = document.createElement('а');
-        let text = document.createTextNode(result[i].id + result[i].name + result[i].date);
-        a.appendChild(text);
-        li.appendChild(a);
-        lns.appendChild(li);
-
-        console.log(result[i].id); 
+        let text = document.createTextNode(result[i].name + result[i].date);
+        
+        li.setAttribute("id", result[i].id);
+        li.addEventListener("click", getID);
+        li.appendChild(text);
+        lns.appendChild(li);      
         }
     document.getElementById('view-links').appendChild(lns);
     }
-//            
-
+       
+function getID(event){
+    console.log(this.id);  
+};
