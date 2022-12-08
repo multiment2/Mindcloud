@@ -41,14 +41,11 @@ function make_links(result) {
 }
 
 function getID(event) {
-    //console.log(this.id);
-    return event.id;
+    console.log(this.id + typeof(this.id));
+    return get_stick(this.id);
 };
 
-let id = getID();
-console.log(id);
-
-function make_stick(id){
+function get_stick(id){
     var body_request = JSON.stringify({
         "jsonrpc": '2.0',
         "method": "get_one_stick",
@@ -63,5 +60,13 @@ function make_stick(id){
         body: body_request
     })
         .then(response => response.json())
-        .then(body => console.log(body.result));
+        .then(body => make_stick(body.result));
 };
+
+function make_stick(result_stick){
+    let r = result_stick;
+    console.log(r);
+    let name = document.getElementById("name");
+    name.setAttribute("value", r.name);     //Добавляем текст имени в поле input
+    document.getElementById("body").value = r.body; //Добавляем текст заметки в поле для редактирования (textarea)
+}
