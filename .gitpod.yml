@@ -4,8 +4,9 @@
 
 tasks:
   - init: source mindcloud/bin/activate
-  - command: pip install -r requirements.txt
-  - command: pip install --upgrade pip
+    command: pip install --upgrade pip   
+             pip install -r requirements.txt
+
 
 
 
