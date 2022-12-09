@@ -1,6 +1,6 @@
 Flask
 Flask-Cors
-Flask-SQLAlchemy
+Flask-SQLAlchemy==2.5.1
 greenlet==1.1.2
 gunicorn==20.1.0
 json-rpc==1.13.0
