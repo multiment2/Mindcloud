@@ -1,27 +1,36 @@
-/*
-var body_request = (method, params, id) => JSON.stringify ({
-    "jsonrpc": '2.0',
-    "method": method,
-    "params": params,
-    "id": id
-})
-*/
+function make_message(method, id, params = []){   //Создание тела запроса
+    let msg = {"jsonrpc": '2.0',
+                    "method": method,
+                    "params": params,
+                    "id": id};
+    return msg;
+}
 
-function get_all_stick() {               //Функция для загрузки всех ссылок на стики
-    var body_request = JSON.stringify({
+
+const body_message = [make_message("get_all_stick", 0)];
+//body_message.push(make_message(get_all_stick, 0));
+console.log(body_message);
+
+function all_stick() {               //Функция для загрузки всех ссылок на стики
+/*    var body_request = JSON.stringify({
         "jsonrpc": '2.0',
         "method": "get_all_stick",
         "params": [],
         "id": 1
     });
+*/
+    var body = body_message[0]; 
+
+    console.log(JSON.stringify(body));
     fetch('api', {
         method: 'POST',
         headers: {
             'Content-Type': 'Application/json'
         },
-        body: body_request
+        body: JSON.stringify(body)
     })
         .then(response => response.json())
+//        .then(response => console.log(response.result))
         .then(body => make_links(body.result));
 };
 
