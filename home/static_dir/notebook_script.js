@@ -1,15 +1,16 @@
 function make_message(method, id, params = []){   //Создание тела запроса
-        let p = [];
-        if (params != []){
-            p.push(params);
+        let p;
+        if (params.forEach){
+            p = params;
+        } else {
+            p = new Array(params);
         }
+
         let msg = {"jsonrpc": '2.0',
                         "method": method,
                         "params": p,
                         "id": id};
-        console.log(msg);
-        return msg;   
-        
+        return msg;  
 }
 
 
