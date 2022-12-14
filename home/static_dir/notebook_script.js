@@ -1,21 +1,24 @@
 function make_message(method, id, params = []){   //Создание тела запроса
-    if (params){
-        
+        let p = [];
+        if (params != []){
+            p.push(params);
+        }
         let msg = {"jsonrpc": '2.0',
                         "method": method,
-                        "params": params.push(params),
+                        "params": p,
                         "id": id};
-        return msg;
-}
+        console.log(msg);
+        return msg;   
+        
 }
 
 
-const body_message = [make_message("get_all_stick", 0)];
+const body_message = make_message("get_all_stick", 0);
 console.log(body_message);
 
 function all_stick() {               //Функция для загрузки всех ссылок на стики
 
-    var body = body_message[0]; 
+    var body = body_message; 
 
     console.log(JSON.stringify(body));
     fetch('api', {
@@ -27,8 +30,8 @@ function all_stick() {               //Функция для загрузки в
     })
         .then(response => response.json())
 //        .then(response => console.log(response.result))
-        .then(body => make_links(body.result));
-};
+        .then(result => make_links(result.result))
+}
 
 function make_links(result) {
 
