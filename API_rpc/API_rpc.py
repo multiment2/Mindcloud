@@ -9,7 +9,7 @@ from .rpc_api_data_base import db, row2dict, Sticker
 
 
 #rpc_bp = Blueprint('api', __name__, url_prefix='/api')
-#current_app.config([config_app_global])
+# current_app.config([config_app_global])
 #rpc_bp.add_url_rule('/', 'api', api.as_view(), method = ['POST'])
 
 
@@ -21,6 +21,7 @@ def get_one_stick(id):
     '''
     stick = db.session.query(Sticker).get(id)
     return row2dict(stick)
+
 
 @api.dispatcher.add_method
 def get_all_stick():
@@ -37,7 +38,6 @@ def get_all_stick():
     return all_stickers
 
 
-
 @api.dispatcher.add_method
 def create_new_stick(name, body):
     '''
@@ -47,6 +47,7 @@ def create_new_stick(name, body):
     new_stick = Sticker(name=name, body=body)
     db.session.add(new_stick)
     db.session.commit()
+
 
 @api.dispatcher.add_method
 def update_stick(id, name, body):
@@ -58,6 +59,7 @@ def update_stick(id, name, body):
     db.session.commit()
     return row2dict(update_stick)
 
+
 @api.dispatcher.add_method
 def delete_one_stick(id):
     '''
@@ -67,11 +69,13 @@ def delete_one_stick(id):
     db.session.delete(stick)
     db.session.commit()
 
+
 def get_bridge():
     '''
     Получить связную карточку.(?)
     '''
     pass
+
 
 def create_new_bridge():
     '''
@@ -79,15 +83,16 @@ def create_new_bridge():
     '''
     pass
 
+
 def update_bridge():
     '''
     Обновить связь между карточками.(?)
     '''
     pass
 
+
 def delete_bridge():
     '''
     Удалить связь между карточками. Сами карточки не удаляются.
     '''
     pass
-
