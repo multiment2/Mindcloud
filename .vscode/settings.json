@@ -1,0 +1,14 @@
+{
+    "editor.language.colorizedBracketPairs": [
+
+    ],
+    "editor.semanticHighlighting.enabled": true,
+    "files.autoGuessEncoding": true,
+    "json.trace.server": "verbose",
+    "html.trace.server": "verbose",
+    "markdown.preview.typographer": true,
+    "markdown.trace.server": "verbose",
+    "css.trace.server": "verbose",
+    "yaml.trace.server": "verbose",
+    "html-validate.trace.server": "verbose"
+}
