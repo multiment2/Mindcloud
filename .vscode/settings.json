@@ -10,5 +10,8 @@
     "markdown.trace.server": "verbose",
     "css.trace.server": "verbose",
     "yaml.trace.server": "verbose",
-    "html-validate.trace.server": "verbose"
+    "html-validate.trace.server": "verbose",
+    "python.globalModuleInstallation": true,
+    "python.languageServer": "Jedi",
+    "python.linting.enabled": false
 }
