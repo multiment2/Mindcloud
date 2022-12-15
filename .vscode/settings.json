@@ -13,5 +13,6 @@
     "html-validate.trace.server": "verbose",
     "python.globalModuleInstallation": true,
     "python.languageServer": "Jedi",
-    "python.linting.enabled": false
+    "python.linting.enabled": false,
+    "terminal.integrated.defaultProfile.linux": "bash"
 }
