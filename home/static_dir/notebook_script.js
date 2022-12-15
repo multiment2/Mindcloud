@@ -1,6 +1,11 @@
 function make_message(method, id, params = []){   //Создание тела запроса
         let p;
-        if (params.forEach){
+        /*
+        Проверяем, если params - массив, тогда присваеваем его переменной.
+        Если params - не массив, тогда содаем новый массив со значением params.
+        Метод forEach есть только у массивов.
+        */
+        if (params.forEach){    
             p = params;
         } else {
             p = new Array(params);
@@ -13,6 +18,18 @@ function make_message(method, id, params = []){   //Создание тела з
         return msg;  
 }
 
+function make_response(message){
+    let response = fetch('api', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'Application/json'
+        },
+        body: JSON.stringify(message)
+    })
+        .then(response => response.json())
+//        .then(response => console.log(response.result))
+    return response;
+}
 
 const body_message = make_message("get_all_stick", 0);
 console.log(body_message);
@@ -55,13 +72,14 @@ function getID(event) {
 };
 
 function get_stick(id){
-/*    var body_request = JSON.stringify({
-        "jsonrpc": '2.0',
-        "method": "get_one_stick",
-        "params": [id],
-        "id": 1
-    });
-*/
+    const b = make_message("get_one_stick", 1, id);
+    let res = make_response(b);
+    res => make_stick(res.result);
+}
+
+/*
+function get_stick(id){
+
     var b = make_message("get_one_stick", 1, id);  
     
     console.log(JSON.stringify(b));  
@@ -77,6 +95,7 @@ function get_stick(id){
         .then(response => console.log(response))
 //        .then(res => make_stick(res.result));
 };
+*/
 
 function make_stick(result_stick){
     let r = result_stick;
