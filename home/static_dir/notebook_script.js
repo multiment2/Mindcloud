@@ -82,3 +82,11 @@ function make_stick(result_stick){
     name.setAttribute("value", result_stick.name);     //Добавляем текст имени в поле input
     document.getElementById("body").value = r.body; //Добавляем текст заметки в поле для редактирования (textarea)
 }
+
+function new_stick(){
+
+//    let n = document.getElementById("name").value;
+//    let b = document.getElementById("body").value
+    let stick = new FormData(stick);
+    alert(stick);
+}
