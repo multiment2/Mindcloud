@@ -20,25 +20,24 @@ function make_message(method, id, params = []){   //Создание тела з
 
 function make_response(message){
     let response = fetch('api', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'Application/json'
-        },
-        body: JSON.stringify(message)
-    })
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'Application/json'
+                    },
+                    body: JSON.stringify(message)
+                })
         .then(response => response.json())
-//        .then(response => console.log(response.result))
+        .then(response => response.result);
     return response;
 }
 
 const body_message = make_message("get_all_stick", 0);
-console.log(body_message);
+
 
 function all_stick() {               //Функция для загрузки всех ссылок на стики
 
     var body = body_message; 
 
-    console.log(JSON.stringify(body));
     fetch('api', {
         method: 'POST',
         headers: {
@@ -47,7 +46,6 @@ function all_stick() {               //Функция для загрузки в
         body: JSON.stringify(body)
     })
         .then(response => response.json())
-//        .then(response => console.log(response.result))
         .then(result => make_links(result.result))
 }
 
@@ -67,39 +65,19 @@ function make_links(result) {
 }
 
 function getID(event) {
-//    console.log(this.id + typeof(this.id));
     return get_stick(this.id);
 };
 
 function get_stick(id){
     const b = make_message("get_one_stick", 1, id);
     let res = make_response(b);
-    res => make_stick(res.result);
+    res.then(result => make_stick(result));
 }
 
-/*
-function get_stick(id){
-
-    var b = make_message("get_one_stick", 1, id);  
-    
-    console.log(JSON.stringify(b));  
-
-    fetch('api', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'Application/json'
-        },
-        body: JSON.stringify(b)
-    })
-        .then(response => response.json())
-        .then(response => console.log(response))
-//        .then(res => make_stick(res.result));
-};
-*/
 
 function make_stick(result_stick){
     let r = result_stick;
-    console.log(typeof(result_stick));
+    console.log(result_stick);
     let name = document.getElementById("name");
     name.setAttribute("value", result_stick.name);     //Добавляем текст имени в поле input
     document.getElementById("body").value = r.body; //Добавляем текст заметки в поле для редактирования (textarea)
