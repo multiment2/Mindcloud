@@ -88,5 +88,8 @@ function new_stick(){
 //    let n = document.getElementById("name").value;
 //    let b = document.getElementById("body").value
     let stick = new FormData(stick);
-    alert(stick);
+    let params = [];
+    params.append(stick.get("name"));
+    params.append(stick.get("body"));
+    console.log(params);
 }
