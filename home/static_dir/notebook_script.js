@@ -83,8 +83,10 @@ function make_stick(result_stick){
     document.getElementById("body").value = r.body; //Добавляем текст заметки в поле для редактирования (textarea)
 }
 
-function new_stick(){
 
+
+function new_stick(event){
+    event.preventDefault();
 //    let n = document.getElementById("name").value;
 //    let b = document.getElementById("body").value
     let stick = new FormData(stick);
