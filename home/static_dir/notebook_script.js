@@ -85,18 +85,6 @@ function make_stick(result_stick){
 
 
 
-<<<<<<< HEAD
-function new_stick(event){
-    event.preventDefault();
-//    let n = document.getElementById("name").value;
-//    let b = document.getElementById("body").value
-    let stick = new FormData(stick);
-    let params = [];
-    params.append(stick.get("name"));
-    params.append(stick.get("body"));
-    console.log(params);
-}
-=======
 function new_stick(){
     let form = document.getElementById("stick");
     form.addEventListener('submit', function (event) {
@@ -108,4 +96,3 @@ function new_stick(){
 
 //const btnf = document.getElementById("button_form");
 //btnf.addEventListener('click', new_stick, false);
->>>>>>> Mindcloud/master
