@@ -94,5 +94,4 @@ function new_stick(){
     
 }
 
-//const btnf = document.getElementById("button_form");
-//btnf.addEventListener('click', new_stick, false);
+
