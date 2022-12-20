@@ -84,9 +84,11 @@ function make_stick(result_stick){
 }
 
 function new_stick(){
-
+    
 //    let n = document.getElementById("name").value;
 //    let b = document.getElementById("body").value
-    let stick = new FormData(stick);
-    alert(stick);
+    stick.onsubmit = (e) => {
+        e.preventDefault();
+    }
+    console.log(stick.name);
 }
