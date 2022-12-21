@@ -87,14 +87,15 @@ function make_stick(result_stick){
 
 function new_stick(){
     let form = document.forms.stick;
-
-    console.log(form.elements);
+    let body_param = [];
+    
     for (let i = 0; i < form.elements.length; i++) {
-        if (form.elements[i].id) {
+        if (form[i]) {
           // Update text input
-        console.log(form.elements[i].id.value);
+        body_param.push(form.elements[i].value);
         }
     }
+    console.log(body_param);
     //form.addEventListener('submit', (e) =>
 //          e.preventDefault();
 //        });
