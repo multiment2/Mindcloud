@@ -86,12 +86,11 @@ function make_stick(result_stick){
 
 
 function new_stick(){
-    let form = document.getElementById("stick");
-    form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            alert(form.name.value);
-        });
-    
+    let form = document.forms.stick;
+    let data = new FormData(form);
+    console.log(data);
+    console.log(data.name);
 }
+    
 
 

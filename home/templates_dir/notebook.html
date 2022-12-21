@@ -34,12 +34,12 @@
 {%block content2%}
 
 <div class="main-block" id="view-content">
-    <form id="stick" enctype="application/json" >
+    <form id="stick" enctype="application/json" onsubmit="return false">
         <input type = "text" id="name">
         <textarea type = "text" id="body"></textarea>
-        <button id = "save-stick" action = "new_stick">Сохранить</button>
+       
     </form>
-    <button id="button_form" onclick="new_stick">Сохранить</button>
+    <button id="button_form" onclick="new_stick()">Сохранить</button>
 </div>
 
 {%endblock%}
