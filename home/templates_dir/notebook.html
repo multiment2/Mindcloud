@@ -16,7 +16,7 @@
     <button id="get_one_stick" >Открыть</button>
     <button id="uddate-stick">Редактировать</button>
     <button id="get-stick">Открыть</button>
-    <button id="delete-stick">Удалить</button>
+    <button id="delete-stick" onclick = "delete_stick()">Удалить</button>
     
 </div>
 {%endblock%}
@@ -35,6 +35,7 @@
 
 <div class="main-block" id="view-content">
     <form id="stick" enctype="application/json" onsubmit="return false">
+        <p type = "text" id = "id" value = "" hidden></p>
         <input type = "text" id="name" value="">
         <textarea type = "text" id="body" value=""></textarea>
        

@@ -1,4 +1,4 @@
-function make_message(method, id, params = []){   //Создание тела запроса
+function make_message(method, id = 0, params = []){   //Создание тела запроса
         let p;
         /*
         Проверяем, если params - массив, тогда присваеваем его переменной.
@@ -31,12 +31,10 @@ function make_response(message){
     return response;
 }
 
-const body_message = make_message("get_all_stick", 0);
-
 
 function all_stick() {               //Функция для загрузки всех ссылок на стики
 
-    var body = body_message; 
+    var body = make_message("get_all_stick");
 
     fetch('api', {
         method: 'POST',
@@ -79,6 +77,8 @@ function make_stick(result_stick){
     let r = result_stick;
     console.log(result_stick);
     let name = document.getElementById("name");
+    let id = document.getElementById("id");
+    id.setAttribute("id", result_stick.id);
     name.setAttribute("value", result_stick.name);     //Добавляем текст имени в поле input
     document.getElementById("body").value = r.body; //Добавляем текст заметки в поле для редактирования (textarea)
 }
@@ -96,10 +96,18 @@ function new_stick(){
         }
     }
     console.log(body_param);
-    //form.addEventListener('submit', (e) =>
-//          e.preventDefault();
-//        });
-    
-    
+    const body = make_message("create_new_stick", 2, body_param);
+    make_response(body);
+//    window.location.reload();
+//    all_stick();
+       
     }
  
+function delete_stick(){
+    let form = document.forms.stick;
+    let ids = form.id.id;
+    console.log(ids);
+//    const body = make_message("delete_one_stick", 0, id);
+//    make_response(body);
+//    window.location.reload();
+}
