@@ -74,18 +74,27 @@ function get_stick(id){
 
 
 function make_stick(result_stick){
+    /*
+    Заполнение формы одним стиком.
+    */
     let r = result_stick;
+    for (let key in result_stick){                     //Проходимся циклом по ключам результата
+        localStorage.setItem(key, result_stick[key]);  //Сщздаем локальное хранилище из результата
+    }
 //    console.log(result_stick);
-    let name = document.getElementById("name");
-    let ids = document.getElementById("ids");
-    ids.setAttribute("value", result_stick.id);
-    name.setAttribute("value", result_stick.name);     //Добавляем текст имени в поле input
+    document.getElementById("name").value = result_stick.name;  //Добавляем текст имени в поле input 
     document.getElementById("body").value = r.body; //Добавляем текст заметки в поле для редактирования (textarea)
 }
 
-
+function create_new_stick(){
+    let form = document.forms.stick;
+    form.reset();
+}
 
 function new_stick(){
+    /*
+    Создание нового стика и сохранение в базе.
+    */
     let form = document.forms.stick;
     let body_param = [];
     
@@ -98,16 +107,15 @@ function new_stick(){
     console.log(body_param);
     const body = make_message("create_new_stick", 2, body_param);
     make_response(body);
-//    window.location.reload();
-//    all_stick();
-       
+    localStorage.clear();
+    window.location.reload();
     }
  
 function delete_stick(){
-    let form = document.forms.stick;
-//    let ids = form.ids;
-    console.log(form);
-//    const body = make_message("delete_one_stick", 0, id);
-//    make_response(body);
-//    window.location.reload();
+    let id = localStorage.getItem("id");
+    console.log(id);
+    const body = make_message("delete_one_stick", 0, id);
+    make_response(body);
+    localStorage.clear();
+    window.location.reload();
 }
