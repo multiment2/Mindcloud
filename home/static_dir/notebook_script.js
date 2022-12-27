@@ -75,10 +75,10 @@ function get_stick(id){
 
 function make_stick(result_stick){
     let r = result_stick;
-    console.log(result_stick);
+//    console.log(result_stick);
     let name = document.getElementById("name");
-    let id = document.getElementById("id");
-    id.setAttribute("id", result_stick.id);
+    let ids = document.getElementById("ids");
+    ids.setAttribute("value", result_stick.id);
     name.setAttribute("value", result_stick.name);     //Добавляем текст имени в поле input
     document.getElementById("body").value = r.body; //Добавляем текст заметки в поле для редактирования (textarea)
 }
@@ -105,8 +105,8 @@ function new_stick(){
  
 function delete_stick(){
     let form = document.forms.stick;
-    let ids = form.id.id;
-    console.log(ids);
+//    let ids = form.ids;
+    console.log(form);
 //    const body = make_message("delete_one_stick", 0, id);
 //    make_response(body);
 //    window.location.reload();
